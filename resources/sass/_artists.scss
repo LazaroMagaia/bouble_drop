@@ -1,0 +1,241 @@
+section.artists
+{
+
+    margin-top: 8rem;
+    z-index: 0;
+    background-color: $gray-700;
+
+    .artists-wrapper
+    {
+        margin-top: 5rem;
+        .single-artist
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin: 1rem 0;
+            img 
+            {
+                width: 30rem;
+                height: 35rem;
+                object-fit: cover;
+                @media screen and (max-width:768px){
+                    width: 15rem;
+                    height: 20rem;
+                }
+            }
+            .link-to-artist
+            {
+                    background-color: $gray-800;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30rem;
+                    height: 35rem;
+                    @media screen and (max-width:768px){
+                        width: 15rem;
+                        height: 20rem;
+                    }
+                a
+                {
+                    color: $gray-400;
+                    font-size: 4rem;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    text-align: center;
+                    text-decoration: none;
+    
+                    @media screen and (max-width:768px){
+                        font-size: 2rem;
+                        padding: 0 1rem;
+                    }
+                }
+            }
+           
+        }
+
+    }
+}
+
+section.single_artist
+{
+    background-color: $gray-700;
+    padding: 10rem 0;
+    
+    .sidebar-artist
+    {
+        img 
+        {
+            width: 100%;
+            height: 40rem;
+            object-fit: cover;
+        }
+    }
+    .social-network-artist
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+        .single-network
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            color: $gray-300;
+            font-size: 1.6rem;
+            text-decoration: none;
+            i 
+            {
+                padding: 0 1rem;
+            }
+            p
+            {
+                padding-top: 1rem;
+            }
+        }
+    }
+    .main-artist
+    {
+        padding: 0 3rem;
+        @media screen and (max-width:768px){
+            padding: 0;
+            text-align: center;
+        }
+        .title
+        {
+            
+            h1 
+            {
+                font-size: 3rem;
+                color: $gray-300;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+            p 
+            {
+                font-size: 2rem;
+                color: $gray-300;font-weight: 700;
+            }
+        }
+        .line
+        {
+            background-color: #fff;
+            width: 4rem;
+            height: 0.2rem;
+            @media screen and (max-width:768px){
+                margin: 0 auto;
+            }
+        }
+        .desc-artist
+        {
+            margin: 2rem 0;
+            p 
+            {
+                font-weight: 400;
+                font-size: 1.6rem;
+                color: $gray-300;
+            }
+            span 
+            {
+                font-weight: 500;
+            }
+            .label
+            {
+                font-weight: 600;
+            }
+        }
+        .desc
+        {
+            margin-top: 2rem;
+            p 
+            {
+                font-size: 1.6rem;
+                color: $gray-300;
+                text-align: justify;
+                @media screen  and (max-width:768px){
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        .youtube
+        {
+            margin-bottom: 4rem;
+            @media screen and (max-width:768px){
+                margin-bottom: 2rem;
+            }
+            iframe
+            {
+                width: 100%;
+                height: 35rem;
+                border-radius: 1rem;
+                @media screen and (max-width:768px){
+                    height: 20rem;
+                }
+            }
+        }
+        .Highlights
+        {
+            margin-top: 4rem;
+            @media screen and (max-width:768px){
+                margin-bottom: 2rem;
+            }
+            h1 
+            {
+                font-size: 2.5rem;
+                color: $gray-300;
+                font-weight: 700;
+                text-transform: uppercase;
+                @media screen and (max-width:768px){
+                    font-size: 2rem;
+                }
+            }
+            .Highlights-single
+            {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                @media screen and (max-width:768px){
+                    justify-content: center;
+                }
+                h3 
+                {
+                    padding: 0 0.5rem;
+                    color: $gray-300;
+                    font-size: 2rem;
+                }
+                h4 
+                {
+                    padding: 0 0.5rem;
+                    color: $gray-400;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
+                p 
+                {
+                    a 
+                    {
+                        padding: 0 0.5rem;
+                        color: #fff;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 2rem;
+                        &:hover 
+                        {
+                            color: $gray-300;
+                        }
+                        @media screen and (max-width:768px){
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
