@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     @vite(["resources/css/app.css","resources/js/app.js","resources/sass/app.scss"])
-
+    <script type="text/javascript" src="{{asset("js/jquery.js")}}"></script>
+    <script type="text/javascript" src="{{asset("js/instafeed.js")}}"></script>
+    <script src="https://unpkg.com/vue-instagram@3.0.0"></script>
 </head>
 <body>
     @if ($page_destination != "home")

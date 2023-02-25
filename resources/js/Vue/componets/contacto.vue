@@ -59,6 +59,7 @@
         </div>
     </section>
 </template>
+
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -148,7 +149,7 @@ import Swal from 'sweetalert2';
                         message:this.message
                     }
                     this.buttonDisabled =true;
-                     axios.post("http://127.0.0.1:8000/api/send_email",data)
+                     axios.post("https:/lzmagaya.site/api/send_email",data)
                     .then((res)=>{
                         console.log(res);
                         Swal.fire({

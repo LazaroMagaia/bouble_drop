@@ -19,7 +19,9 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
         "bootstrap": "^5.2.3",
+        "instafeed.js": "^2.0.0",
         "sass": "^1.58.1",
-        "sweetalert2": "^11.7.1"
+        "sweetalert2": "^11.7.1",
+        "vue-instagram": "^3.0.0"
     }
 }
