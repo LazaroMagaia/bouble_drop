@@ -24,7 +24,8 @@
                 <div class="card-content">
                     <div class="card-body">
                         <form class="form" enctype="multipart/form-data" method="POST"
-                        action="{{route("label_create")}}">
+                        action="{{route("update_label",$label->id)}}">
+                        @method('PUT')
                         @csrf
                             <div class="row">
                                 <div class="col-md-6 col-12">

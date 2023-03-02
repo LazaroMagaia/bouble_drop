@@ -67,9 +67,18 @@ Route::middleware('auth')->group(function () {
         Route::post("/label_create",[AdminActionController::class,"create_label"])
         ->name("label_create");
 
+
         Route::get("/label_edit/{id}",[AdminController::class,"edit_label"])
         ->name("edit_label");
 
+        
+        Route::put("/label_update/{id}",[AdminActionController::class,"edit_label"])
+        ->name("update_label");
+        
+
+        Route::delete("/remove_label/{id}",[AdminActionController::class,"remove_label"])
+        ->name("remove_label");
+        
       });
 
 

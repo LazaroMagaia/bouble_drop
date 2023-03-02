@@ -38,7 +38,7 @@
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
                                             <a href="{{route("edit_label",$artist->id)}}" class="btn btn-warning">edit</a>
-                                            <form action="" method="POST">
+                                            <form action="{{route("remove_label",$artist->id)}}" method="POST">
                                                 @csrf
                                                 @method("DELETE")
                                                 <button type="submit" class="btn btn-danger">Remover</button>

@@ -126,5 +126,34 @@ class AdminActionController extends Controller
             return redirect()->route("artists_label");
         }
     }
+
+    public function edit_label($id,Request $request)
+    {
+        $data['label'] = $request->label;
+        $data['artist_id'] = $request->artist_id;
+        
+        $existLabel = DB::table('label')->find($id);
+        if(!$existLabel)
+        {
+            return redirect()->back();
+        }else
+        {
+            $edit_label = DB::table('label')->where("id",$id)->update($data);
+            return redirect()->route("artists_label");
+        }
+    }
+
+    public function remove_label($id,Request $request)
+    {
+        $existLabel = DB::table('label')->where("id",$id)->first();
+        if(!$existLabel)
+        {
+            return redirect()->back();
+        }else
+        {
+            $create_label = DB::table('label')->where("id",$id)->delete();
+            return redirect()->route("artists_label");
+        }
+    }
 }
 
