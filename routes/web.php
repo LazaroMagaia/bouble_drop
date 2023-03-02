@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\{
+  AdminController,
+  AdminActionController
+};
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Auth;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +22,8 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['register' => false]);
+
+
 Route::get('/', [ClientController::class,"home"]);
 Route::get('/artists', [ClientController::class,"artists"]);
 Route::get('/single_artist/{id}', [ClientController::class,"single_artists"]);
@@ -26,8 +33,46 @@ Route::get('/contact', [ClientController::class,"contact"]);
 ////ADMIN
 
 Route::middleware('auth')->group(function () {
+    Route::group([
+        'prefix' => 'admin',
+      ], function () {
+        Route::get("/",[AdminController::class,"index"]);
 
-Route::get("/admin",[AdminController::class,"index"]);
+        //HOME PAGE
+        Route::get("/homepage",[AdminController::class,"homepage"])->name("admin_home");
+        Route::post("/homepage/create/{id}",[AdminActionController::class,"edited_homepage"])
+        ->name("homepage_create");
+
+        //ARTISTS
+        Route::get("/artists",[AdminController::class,"artists"])->name("admin_artists");
+        Route::get("/artists/create",[AdminController::class,"artists_create"])->name("artists_create");
+        Route::post("/artists_create",[AdminActionController::class,"create_artist"])
+        ->name("create_artist");
+        Route::delete("/artists_delete/{id}",[AdminActionController::class,"remove_artist"])
+        ->name("delete_artist");
+
+        Route::get("/artists_edit/{id}",[AdminController::class,"artists_edit"])
+        ->name("artists_edit");
+
+        Route::put("/artists_update/{id}",[AdminActionController::class,"artists_edit"])
+        ->name("artists_updated");
+
+        Route::get("/label",[AdminController::class,"artists_label"])
+        ->name("artists_label");
+
+        Route::get("/create_label",[AdminController::class,"create_label"])
+        ->name("create_label");
+
+        
+        Route::post("/label_create",[AdminActionController::class,"create_label"])
+        ->name("label_create");
+
+        Route::get("/label_edit/{id}",[AdminController::class,"edit_label"])
+        ->name("edit_label");
+
+      });
+
+
 
 });
 
@@ -42,5 +87,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 */
+
+Auth::routes(['register' => false]);
+
 
 require __DIR__.'/auth.php';

@@ -13,22 +13,22 @@
 <section class="artists">
     <div class="artists-wrapper container">
         <div class="row">
-            @for ($i=0;$i<10;$i++)
+            @foreach ($artists as $artist)
                 <div class="col-md-6">
                     <div class="single-artist">
-                        <a href="/single_artist/{{$i}}">
-                            <img src="/images/gb-home2.jpg" alt="">
+                        <a href="/single_artist/{{$artist->id}}">
+                            <img src="{{url("storage/{$artist->image}")}}" alt="">
                         </a>
                         <div class="link-to-artist">
-                            <a href="/single_artist/{{$i}}">
+                            <a href="/single_artist/{{$artist->id}}">
                                 <p>
-                                    Double Drop
+                                    {{$artist->name}}
                                 </p>
                             </a>
                         </div>
                     </div>
                 </div><!--col-md-6-->
-            @endfor
+            @endforeach
 
         </div><!--row-->
     </div>

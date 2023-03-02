@@ -4,9 +4,21 @@
     <div class="insta-wrapper">
         <div class="row">
             <div class="col-md-3" v-for="(posts, index) in InstaPosts">
-                <a :href="posts.permalink" target="_blank" :key="index" v-if="index < 8">
-                <img :src="posts.media_url" :alt="posts.caption"> 
-                </a>
+                <div v-if ="index < 8">
+                    <a :href="posts.permalink" target="_blank" :key="index" 
+                        v-if = "posts.media_type === 'VIDEO'">
+                        <iframe class="embed-responsive-item" 
+                        :src="posts.media_url"
+                            allowfullscreen>
+                        </iframe>
+                    </a>
+
+                    <a :href="posts.permalink" target="_blank" :key="index" 
+                        v-if = "posts.media_type === 'IMAGE'" >
+                        <img :src="posts.media_url" :alt="posts.caption"> 
+                    </a>
+                    
+                </div>
             </div>
     </div>
     </div><!--insta-wrapper-->
@@ -19,7 +31,7 @@
         data()
         {
             return{
-                token:"IGQVJWdTF2M3NZAZA0gyMzRWRzduWDV4TkZAEV1I5alp1Q3M5cTJFdkVnajc2SV9WYTZAvS2N2SjA0MUViTmNkNUI1YmdQVmJMQ2c1RWdvaFlaUFl0b2lDLXZARWGx0N3d0MDVWOWNuektmaDIybVo3T0NuYQZDZD",
+                token:"IGQVJWcFMybHpPX2xLc1ZABWFRnWkxtekpmRjNxNk1aT1dFNkRFcEphcm9TUlJhOTdYdk5lNGluR2ZACMXRwN2lwXzN3N3Fac0ZA6cENOdTRIYUZAUaldVOW1iNjRBYm9KM3BYS09WemNQT2NZAYU5VUURGcwZDZD",
                 InstaPosts:{},
                 i:0
                 }

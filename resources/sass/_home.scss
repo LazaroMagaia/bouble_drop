@@ -14,6 +14,23 @@
             font-size: 1.8rem;
         }
     }
+
+    #instafeed
+    {
+        padding: 4rem 0;
+        a 
+        {
+           margin: 1rem 1rem;
+            img 
+            {
+   
+                border-radius: 0.5rem;
+                width: 100%;
+                height: 30rem;
+                object-fit: cover;
+            }
+        }
+    }
     .insta-wrapper
     {
         /*display: flex;
@@ -32,6 +49,13 @@
                 width: 100%;
                 height: 30rem;
                 object-fit: cover;
+            }
+            iframe
+            {
+                border-radius: 0.5rem;
+                width: 100%;
+                height: 30rem;
+                object-fit: contain;
             }
         }
      

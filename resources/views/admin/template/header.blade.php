@@ -8,8 +8,15 @@
     <title>Double Drop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    @vite(["resources/css/app.css","resources/js/app.js","resources/sass/app.scss"])
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("assets/css/bootstrap.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/vendors/iconly/bold.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/vendors/perfect-scrollbar/perfect-scrollbar.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/vendors/bootstrap-icons/bootstrap-icons.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/app.css")}}">
+    <link rel="shortcut icon" href="{{asset("assets/images/favicon.svg")}}" type="image/x-icon">
+    @vite(["resources/js/app.js","resources/sass/dashboard/app.scss"])
 </head>
-<body>
+<body> 

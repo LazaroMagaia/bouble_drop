@@ -41,18 +41,21 @@
                 <div class="main-artist">
 
                     <div class="title">
-                        <h1>Double Drop</h1>
+                        <h1>{{$artist->name}}</h1>
                         <p>Mozambique</p>
                     </div>
 
                     <div class="line"></div>
 
                     <div class="desc-artist">
-                        <p>Genero: <span>Afro House</span></p>
+                        <p>Genero: <span>{{$artist->gender}}</span></p>
                         <p>Label: 
+                            @foreach ($labels as $label)
                             <span class="label">
-                            Villahangar, MoBlack Records, Redolent, Inward, Wayu
+                                {{$label->label}},
                             </span>
+                            @endforeach
+
                         </p>
                     </div>
 
@@ -60,21 +63,7 @@
                     
                     <div class="desc">
                         <p>
-                            Double Drop soon became interested in music. In 2006, he began his adventure
-                            in the world of production in styles such as HipHop and R & B. In 2018
-                            he took a break from music for a year, and outside the city he realized
-                            the need for a change in the music he was producing. Today, he is back
-                            with a new creative lymph, riding on the evolution of the times but 
-                            always tied to his roots. Which allowed him to sign with major labels like Go
-                            Deeva, Inward, MoBlack, Transa Records.With the talent of young producers to
-                            flourish in Mozambique, he decided to create his label Xibalo, focus on afro
-                            and organic contest. His genre of reference is Afro House: a contagious sound,
-                            warm and without limits as regards creativity and the fusion of styles. He has
-                            a positive spirit, and he loves to enrich himself thanks to the encounter with
-                            people and other artists, under the sign of respect and love for humanity, 
-                            and with the aim of instilling hope, touching the soul of the listeners, 
-                            beyond any race, sex or religion. A nature that is fully reflected in his
-                            music.
+                            {!!$artist->description!!}
                         </p>
                     </div>
 
